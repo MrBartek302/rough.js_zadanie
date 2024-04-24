@@ -4,23 +4,44 @@
   align-items: center;
   justify-content: center;
   height: 20vh;
-  width: 10%;
+  width: 70%;
 }
 
 #gora {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #404040;
   height: 80%;
   width: 100%;
 }
 
 #dol {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
+  background-color: #1a1a1a;
   height: 20%;
   width: 100%;
+}
+
+#dollewo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 90%;
+}
+
+#dolprawo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  height: 100%;
+  width: 10%;
 }
 
 #gora_strz {
@@ -44,4 +65,40 @@
 #svg {
   width: 100%;
   height: 100%;
+}
+
+button {
+  border: solid 3px white;
+  border-radius: 30px;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  height: 60px;
+  width: 70px;
+}
+
+button:hover {
+  border: solid 3px black;
+  border-radius: 30px;
+  background-color: white;
+  color: black;
+}
+
+#cancel {
+  border: solid 5px #330000;
+  border-radius: 30px;
+  background-color: #b30000;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  height: 60px;
+  width: 110px;
+}
+
+#cancel:hover {
+  border: solid 5px #b30000;
+  border-radius: 30px;
+  background-color: #330000;
+  color: white;
 }
