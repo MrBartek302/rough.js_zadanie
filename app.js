@@ -3,6 +3,19 @@ const svg = document.getElementById("svg");
 var glob_y = 320;
 var glob_x = 850;
 
+var tab = [];
+
+function check() {
+  for (var i = 0; i < tab.length; i++) {
+    if (tab[i][0] === glob_x && tab[i][1] === glob_y) {
+      alert("Kwadrat już istnieje na tym miejscu!");
+      return true;
+    }
+  }
+  tab.push([glob_x, glob_y]);
+  return false;
+}
+
 kwadrat();
 async function kwadrat() {
   const kwadrat = roughsvg.rectangle(glob_x, glob_y, 110, 110, {
@@ -15,6 +28,7 @@ async function kwadrat() {
   });
   kwadrat.setAttribute("id", "test");
   svg.appendChild(kwadrat);
+  console.log(tab);
 }
 
 const buttonik1 = document.getElementById("strz_dol");
@@ -30,7 +44,11 @@ async function dol() {
   );
   svg.appendChild(liniaDolna);
   glob_y = glob_y + 140;
-  await kwadrat();
+  if (check() == false) {
+    await kwadrat();
+  } else {
+    return;
+  }
 }
 
 const buttonik2 = document.getElementById("strz_gor");
@@ -46,7 +64,11 @@ async function gora() {
   );
   svg.appendChild(liniaGorna);
   glob_y = glob_y - 140;
-  await kwadrat();
+  if (check() == false) {
+    await kwadrat();
+  } else {
+    return;
+  }
 }
 
 const buttonik3 = document.getElementById("strz_lew");
@@ -62,7 +84,11 @@ async function lewo() {
   );
   svg.appendChild(liniaLewa);
   glob_x = glob_x - 140;
-  await kwadrat();
+  if (check() == false) {
+    await kwadrat();
+  } else {
+    return;
+  }
 }
 
 const buttonik4 = document.getElementById("strz_pra");
@@ -78,7 +104,11 @@ async function prawo() {
   );
   svg.appendChild(liniaPrawa);
   glob_x = glob_x + 140;
-  await kwadrat();
+  if (check() == false) {
+    await kwadrat();
+  } else {
+    return;
+  }
 }
 
 const buttonik10 = document.getElementById("cancel");
@@ -86,6 +116,7 @@ buttonik10.addEventListener("click", can);
 
 async function can() {
   document.getElementById("svg").innerHTML = "";
+  tab = [];
   glob_y = 320;
   glob_x = 850;
   await kwadrat();
