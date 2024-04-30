@@ -7,7 +7,7 @@ kwadrat();
 async function kwadrat() {
   const kwadrat = roughsvg.rectangle(glob_x, glob_y, 110, 110, {
     fill: "red",
-    hachureAngle: 60, // angle of hachure,
+    hachureAngle: 60,
     hachureGap: 8,
   });
   kwadrat.addEventListener("click", () => {
