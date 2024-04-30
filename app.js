@@ -1,7 +1,7 @@
 let roughsvg = rough.svg(document.getElementById("svg"));
 const svg = document.getElementById("svg");
-var glob_y = 300;
-var glob_x = 712;
+var glob_y = 320;
+var glob_x = 850;
 
 kwadrat();
 async function kwadrat() {
@@ -86,7 +86,7 @@ buttonik10.addEventListener("click", can);
 
 async function can() {
   document.getElementById("svg").innerHTML = "";
-  glob_y = 300;
-  glob_x = 712;
+  glob_y = 320;
+  glob_x = 850;
   await kwadrat();
 }
